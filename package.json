@@ -1,0 +1,28 @@
+{
+  "name": "gh-repo-has-license",
+  "version": "1.0.0",
+  "description": "Check if a GitHub repository has a license",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Knutakir/gh-repo-has-license.git"
+  },
+  "keywords": [
+    "GitHub",
+    "repository",
+    "license",
+    "check"
+  ],
+  "author": "Knut Kirkhorn",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Knutakir/gh-repo-has-license/issues"
+  },
+  "homepage": "https://github.com/Knutakir/gh-repo-has-license#readme",
+  "dependencies": {
+    "default-branch": "^1.0.3"
+  }
+}
