@@ -25,5 +25,9 @@ ghRepoHasLicense('https://github.com/Knutakir/btc-value-cli').then(result => {
 ### ghRepoHasLicense(repo)
 Returns true if the GitHub `repo` has a license. Otherwise it returns false.
 
+## Related
+- [has-license](https://github.com/Knutakir/has-license) - Check if a repository has a license
+- [default-branch](https://github.com/Knutakir/default-branch) - Get the default branch of a GitHub repository
+
 ## License
 MIT © [Knut Kirkhorn](LICENSE)
