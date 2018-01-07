@@ -8,7 +8,7 @@ $ npm install gh-repo-has-license
 
 ## Usage
 ```js
-const defaultBranch = require('gh-repo-has-license');
+const ghRepoHasLicense = require('gh-repo-has-license');
 
 ghRepoHasLicense('Knutakir/btc-value-cli').then(result => {
     console.log(result);
