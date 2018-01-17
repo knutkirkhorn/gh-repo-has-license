@@ -1,4 +1,4 @@
-# gh-repo-has-license
+# gh-repo-has-license [![Build Status](https://travis-ci.org/Knutakir/gh-repo-has-license.svg?branch=master)](https://travis-ci.org/Knutakir/gh-repo-has-license)
 > Check if a GitHub repository has a license
 
 ## Installation
