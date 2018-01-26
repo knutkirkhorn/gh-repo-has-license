@@ -16,3 +16,21 @@ test('check if there is a license', t => {
         t.fail();
     });
 });
+
+// license is named 'LICENSE.txt'
+test('check license named differently', t => {
+    return m('Microsoft/vscode').then(result => {
+        t.true(result);
+    }).catch(() => {
+        t.fail();
+    });
+});
+
+// license is named 'license'
+test('check license named differently', t => {
+    return m('sindresorhus/got').then(result => {
+        t.true(result);
+    }).catch(() => {
+        t.fail();
+    });
+});

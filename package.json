@@ -26,6 +26,6 @@
     "default-branch": "^1.0.3"
   },
   "devDependencies": {
-    "ava": "^0.24.0"
+    "ava": "^0.25.0"
   }
 }
