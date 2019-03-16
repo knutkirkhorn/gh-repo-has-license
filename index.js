@@ -21,7 +21,7 @@ function fallbackMethod(repoUrl) {
                 try {
                     const regexp = /(.*)\n(.*)<svg(.*)octicon octicon-law[^]*?<\/a>/g;
                     const regexMatch = data.match(regexp);
-                    const newLicenseUrl = 'https://github.com/' + regexMatch[0].split('a href="')[1].split('"')[0];
+                    const newLicenseUrl = 'https://github.com/' + regexMatch[0].split('a href="/')[1].split('"')[0];
 
                     https.get(newLicenseUrl, response => {
                         if (response.statusCode < 200 || response.statusCode > 299) {

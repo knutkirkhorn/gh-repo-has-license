@@ -34,3 +34,12 @@ test('check license with other name 2', t => {
         t.fail();
     });
 });
+
+
+test('test', t => {
+    return m('https://github.com/Knutakir/has-license').then(result => {
+        t.true(result);
+    }).catch(() => {
+        t.fail();
+    });
+});
