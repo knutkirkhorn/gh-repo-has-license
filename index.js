@@ -9,15 +9,15 @@ function fallbackMethod(repoUrl) {
                 resolve(false);
                 return;
             }
-    
+
             response.setEncoding('UTF-8');
             let data = '';
-    
-            response.on('data', function(body) {
+
+            response.on('data', body => {
                 data += body;
             });
-    
-            response.on('end', function() {
+
+            response.on('end', () => {
                 try {
                     const regexp = /(.*)\n(.*)<svg(.*)octicon octicon-law[^]*?<\/a>/g;
                     const regexMatch = data.match(regexp);
@@ -28,19 +28,20 @@ function fallbackMethod(repoUrl) {
                             resolve(false);
                             return;
                         }
-        
+
                         resolve(true);
                         return;
-                    }).on('error', (error) => {
+                    }).on('error', error => {
                         reject(error);
                     });
-                } catch(err) {
+                } catch (error) {
                     resolve(false);
                     return;
                 }
+
                 resolve(true);
             });
-        }).on('error', (error) => {
+        }).on('error', error => {
             reject(error);
         });
     });
@@ -73,14 +74,14 @@ module.exports = repo => {
                     data += body;
                 });
 
-                response.on('end', function() {
+                response.on('end', () => {
                     if (response.statusCode === 404) {
-                        fallbackMethod(repo).then(resolve);  
+                        fallbackMethod(repo).then(resolve);
                     } else {
                         resolve(true);
                     }
                 });
-            }).on('error', (error) => {
+            }).on('error', error => {
                 reject(error);
             });
         }).catch(() => {

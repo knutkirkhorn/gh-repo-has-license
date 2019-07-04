@@ -1,45 +1,49 @@
 import test from 'ava';
-import m from '.';
+import ghRepoHasLicense from '.';
 
-test('check for no errors', t => {
-    return m('Knutakir/btc-value-cli').then(result => {
+test('check for no errors', async t => {
+    try {
+        await ghRepoHasLicense('Knutakir/btc-value-cli');
         t.pass();
-    }).catch(() => {
+    } catch (error) {
         t.fail();
-    });
+    }
 });
 
-test('check if there is a license', t => {
-    return m('Knutakir/btc-value').then(result => {
+test('check if there is a license', async t => {
+    try {
+        const result = await ghRepoHasLicense('Knutakir/btc-value');
         t.true(result);
-    }).catch(() => {
+    } catch (error) {
         t.fail();
-    });
+    }
 });
 
-// license is named 'LICENSE.txt'
-test('check license with other name 1', t => {
-    return m('Microsoft/vscode').then(result => {
+// License is named 'LICENSE.txt'
+test('check license with other name 1', async t => {
+    try {
+        const result = await ghRepoHasLicense('Microsoft/vscode');
         t.true(result);
-    }).catch(() => {
+    } catch (error) {
         t.fail();
-    });
+    }
 });
 
-// license is named 'license'
-test('check license with other name 2', t => {
-    return m('sindresorhus/got').then(result => {
+// License is named 'license'
+test('check license with other name 2', async t => {
+    try {
+        const result = await ghRepoHasLicense('sindresorhus/got');
         t.true(result);
-    }).catch(() => {
+    } catch (error) {
         t.fail();
-    });
+    }
 });
 
-
-test('test', t => {
-    return m('https://github.com/Knutakir/has-license').then(result => {
+test('test', async t => {
+    try {
+        const result = await ghRepoHasLicense('https://github.com/Knutakir/has-license');
         t.true(result);
-    }).catch(() => {
+    } catch (error) {
         t.fail();
-    });
+    }
 });
