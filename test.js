@@ -1,5 +1,5 @@
-import test from 'ava';
-import ghRepoHasLicense from '.';
+const test = require('ava');
+const ghRepoHasLicense = require('.');
 
 test('check for no errors', async t => {
     try {
