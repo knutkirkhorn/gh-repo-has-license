@@ -1,4 +1,5 @@
 'use strict';
+
 const https = require('https');
 const defaultBranch = require('default-branch');
 
@@ -21,7 +22,7 @@ function fallbackMethod(repoUrl) {
                 try {
                     const regexp = /(.*)\n(.*)<svg(.*)octicon octicon-law[^]*?<\/a>/g;
                     const regexMatch = data.match(regexp);
-                    const newLicenseUrl = 'https://github.com/' + regexMatch[0].split('a href="/')[1].split('"')[0];
+                    const newLicenseUrl = `https://github.com/${regexMatch[0].split('a href="/')[1].split('"')[0]}`;
 
                     https.get(newLicenseUrl, response => {
                         if (response.statusCode < 200 || response.statusCode > 299) {
@@ -30,7 +31,6 @@ function fallbackMethod(repoUrl) {
                         }
 
                         resolve(true);
-                        return;
                     }).on('error', error => {
                         reject(error);
                     });
@@ -49,14 +49,15 @@ function fallbackMethod(repoUrl) {
 
 module.exports = repo => {
     if (!repo.includes('github.com')) {
-        repo = 'https://github.com/' + repo;
+        // eslint-disable-next-line no-param-reassign
+        repo = `https://github.com/${repo}`;
     }
 
     return new Promise((resolve, reject) => {
         // Get the default branch of the repo
         defaultBranch(repo).then(branch => {
             // Try first to check this url, since it is the most used.
-            const licenseUrl = repo + '/blob/' + branch + '/LICENSE';
+            const licenseUrl = `${repo}/blob/${branch}/LICENSE`;
 
             // Check if a license exists at that branch
             https.get(licenseUrl, response => {
@@ -68,11 +69,8 @@ module.exports = repo => {
                 }
 
                 response.setEncoding('UTF-8');
-                let data = '';
-    
-                response.on('data', function(body) {
-                    data += body;
-                });
+
+                response.on('data', () => {});
 
                 response.on('end', () => {
                     if (response.statusCode === 404) {

@@ -4,7 +4,8 @@
   "description": "Check if a GitHub repository has a license",
   "main": "index.js",
   "scripts": {
-    "test": "ava"
+    "test": "ava",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,9 @@
     "default-branch": "^1.0.8"
   },
   "devDependencies": {
-    "ava": "^3.14.0"
+    "ava": "^3.14.0",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
