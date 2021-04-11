@@ -4,9 +4,13 @@
   "description": "Check if a GitHub repository has a license",
   "main": "index.js",
   "scripts": {
-    "test": "ava",
+    "test": "ava && tsd",
     "lint": "eslint ."
   },
+  "files": [
+    "index.js",
+    "index.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Knutakir/gh-repo-has-license.git"
@@ -31,6 +35,7 @@
     "eslint": "^7.24.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-ava": "^12.0.0",
-    "eslint-plugin-import": "^2.22.1"
+    "eslint-plugin-import": "^2.22.1",
+    "tsd": "^0.14.0"
   }
 }
