@@ -24,8 +24,8 @@ function fallbackMethod(repoUrl) {
                     const regexMatch = data.match(regexp);
                     const newLicenseUrl = `https://github.com/${regexMatch[0].split('a href="/')[1].split('"')[0]}`;
 
-                    https.get(newLicenseUrl, response => {
-                        if (response.statusCode < 200 || response.statusCode > 299) {
+                    https.get(newLicenseUrl, licenseResponse => {
+                        if (licenseResponse.statusCode < 200 || licenseResponse.statusCode > 299) {
                             resolve(false);
                             return;
                         }
