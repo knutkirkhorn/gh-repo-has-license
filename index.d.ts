@@ -6,12 +6,12 @@ Check if a GitHub repository has a license
 ```
 import ghRepoHasLicense from 'gh-repo-has-license';
 
-ghRepoHasLicense('Knutakir/btc-value-cli').then(result => {
+ghRepoHasLicense('knutkirkhorn/btc-value-cli').then(result => {
     console.log(result);
     // => true
 });
 
-ghRepoHasLicense('https://github.com/Knutakir/btc-value-cli').then(result => {
+ghRepoHasLicense('https://github.com/knutkirkhorn/btc-value-cli').then(result => {
     console.log(result);
     // => true
 });

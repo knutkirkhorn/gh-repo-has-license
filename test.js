@@ -3,7 +3,7 @@ const ghRepoHasLicense = require('.');
 
 test('check for no errors', async t => {
     try {
-        await ghRepoHasLicense('Knutakir/btc-value-cli');
+        await ghRepoHasLicense('knutkirkhorn/btc-value-cli');
         t.pass();
     } catch (error) {
         t.fail();
@@ -12,7 +12,7 @@ test('check for no errors', async t => {
 
 test('check if there is a license', async t => {
     try {
-        const result = await ghRepoHasLicense('Knutakir/btc-value');
+        const result = await ghRepoHasLicense('knutkirkhorn/btc-value');
         t.true(result);
     } catch (error) {
         t.fail();
@@ -41,7 +41,7 @@ test('check license with other name 2', async t => {
 
 test('test', async t => {
     try {
-        const result = await ghRepoHasLicense('https://github.com/Knutakir/has-license');
+        const result = await ghRepoHasLicense('https://github.com/knutkirkhorn/has-license');
         t.true(result);
     } catch (error) {
         t.fail();
