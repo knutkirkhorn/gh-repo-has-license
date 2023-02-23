@@ -1,5 +1,5 @@
 import defaultBranch from 'default-branch';
-// eslint-disable-next-line import/no-extraneous-dependencies
+// eslint-disable-next-line import/no-extraneous-dependencies, import/no-unresolved
 import got from 'got';
 import * as cheerio from 'cheerio';
 import getPackageUserAgent from 'package-user-agent';
