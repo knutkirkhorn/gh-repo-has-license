@@ -35,7 +35,8 @@
 	"dependencies": {
 		"cheerio": "^1.0.0-rc.12",
 		"default-branch": "^2.0.1",
-		"got": "^12.5.3"
+		"got": "^12.5.3",
+		"package-user-agent": "^1.0.1"
 	},
 	"devDependencies": {
 		"ava": "^5.2.0",
