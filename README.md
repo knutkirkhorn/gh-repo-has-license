@@ -5,23 +5,19 @@
 ## Installation
 
 ```
-$ npm install gh-repo-has-license
+npm install gh-repo-has-license
 ```
 
 ## Usage
 
 ```js
-const ghRepoHasLicense = require('gh-repo-has-license');
+import ghRepoHasLicense from 'gh-repo-has-license';
 
-ghRepoHasLicense('knutkirkhorn/btc-value-cli').then(result => {
-    console.log(result);
-    // => true
-});
+console.log(await ghRepoHasLicense('knutkirkhorn/btc-value-cli'));
+// => true
 
-ghRepoHasLicense('https://github.com/knutkirkhorn/btc-value-cli').then(result => {
-    console.log(result);
-    // => true
-});
+console.log(await ghRepoHasLicense('https://github.com/knutkirkhorn/btc-value-cli'));
+// => true
 ```
 
 ## API

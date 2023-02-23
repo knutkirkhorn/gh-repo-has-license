@@ -1,41 +1,49 @@
 {
-  "name": "gh-repo-has-license",
-  "version": "1.2.1",
-  "description": "Check if a GitHub repository has a license",
-  "main": "index.js",
-  "scripts": {
-    "test": "ava && tsd",
-    "lint": "eslint ."
-  },
-  "files": [
-    "index.js",
-    "index.d.ts"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/knutkirkhorn/gh-repo-has-license.git"
-  },
-  "keywords": [
-    "GitHub",
-    "repository",
-    "license",
-    "check"
-  ],
-  "author": "Knut Kirkhorn",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/knutkirkhorn/gh-repo-has-license/issues"
-  },
-  "homepage": "https://github.com/knutkirkhorn/gh-repo-has-license#readme",
-  "dependencies": {
-    "default-branch": "^1.1.0"
-  },
-  "devDependencies": {
-    "ava": "^3.15.0",
-    "eslint": "^7.24.0",
-    "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-plugin-ava": "^12.0.0",
-    "eslint-plugin-import": "^2.22.1",
-    "tsd": "^0.14.0"
-  }
+	"name": "gh-repo-has-license",
+	"version": "1.2.1",
+	"description": "Check if a GitHub repository has a license",
+	"scripts": {
+		"test": "ava && tsd",
+		"lint": "eslint ."
+	},
+	"files": [
+		"index.js",
+		"index.d.ts"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/knutkirkhorn/gh-repo-has-license.git"
+	},
+	"keywords": [
+		"GitHub",
+		"repository",
+		"license",
+		"check"
+	],
+	"author": "Knut Kirkhorn",
+	"type": "module",
+	"exports": "./index.js",
+	"types": "./index.d.ts",
+	"engines": {
+		"node": ">=14.16"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/knutkirkhorn/gh-repo-has-license/issues"
+	},
+	"homepage": "https://github.com/knutkirkhorn/gh-repo-has-license#readme",
+	"dependencies": {
+		"cheerio": "^1.0.0-rc.12",
+		"default-branch": "^2.0.1",
+		"got": "^12.5.3"
+	},
+	"devDependencies": {
+		"ava": "^5.2.0",
+		"eslint": "^8.34.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-ava": "^14.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"eslint-plugin-unicorn": "^45.0.2",
+		"tsd": "^0.25.0"
+	}
 }
